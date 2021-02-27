@@ -30,7 +30,7 @@ class AsyncTaskActivity: AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         mSettings.edit().putInt("seconds",secondsElapsed).apply()
-        timer.cancel(false)
+        timer.cancel(true)
     }
 
     inner class AsyncTimer(private val binding: ActivityMainBinding): AsyncTask<Void , Void , Void>(){
